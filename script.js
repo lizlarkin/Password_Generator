@@ -13,14 +13,33 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-length = prompt("How long do you want the password between 8 and 128 characters?")
+// Collect User Preference
+let lengthUserInput = prompt("How long do you want the password between 8 and 128 characters?")
+  console.log(lengthUserInput);
  
-lowercase = confirm("Do you want to include lowercase letters?")
+let lowercaseUserInput = confirm("Do you want to include lowercase letters?")
+  console.log(lowercaseUserInput);
 
-uppercase = confirm("Do you want to include uppercase letters?")
+let uppercaseUserInput = confirm("Do you want to include uppercase letters?")
+  console.log(uppercaseUserInput);
 
-numeric = confirm("Do you want to include numeric characters?")
+let numericUserInput = confirm("Do you want to include numeric characters?")
+  console.log(numericUserInput);
 
-specialChar = confirm("Do you want to include special characters?")
-  
+let specialCharUserInput = confirm("Do you want to include special characters?")
+  console.log(specialCharUserInput);
+
+// Set password options
+
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  console.log(letters);
+
+let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  console.log(numbers);
+
+let specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+  console.log(specialCharacters);
+
+// Set variable to hold password  
+let testpass = [] 
+
