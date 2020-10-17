@@ -55,16 +55,28 @@ console.log(countLength);
 
 var tempPass = [] 
   if (lowercaseUserInput === true) {
-    tempPass.push(letters);
+    for (let i = 0; i < countLength; i++) {
+      let random = Math.floor(Math.random() * 26);
+      tempPass.push(letters[random]);
+    }
   } 
   if (uppercaseUserInput === true) {
-    tempPass.push(upperLetters);
+    for (let i = 0; i < countLength; i++) {
+      let random = Math.floor(Math.random() * 26);
+      tempPass.push(upperLetters[random]);
+    }
   } 
   if (numericUserInput === true) {
-    tempPass.push(numbers);
+    for (let i = 0; i < countLength; i++) {
+      let random = Math.floor(Math.random() * 10);
+      tempPass.push(numbers[random]);
+    }
   } 
   if (specialCharUserInput === true) {
-    tempPass.push(specialCharacters);
+    for (let i = 0; i < countLength; i++) {
+      let random = Math.floor(Math.random() * 10);
+      tempPass.push(specialCharacters[random]);
+    }
   } 
   
     console.log(`Temp pass is ${tempPass}!`)
@@ -76,25 +88,6 @@ var tempPass = []
 // passwordText.textContent = "test";
 
 // create random number to put into for loops
-for (let i = 0; i < countLength; i++) {
-  var random = Math.floor(Math.random() * 26);
-    console.log(letters[random]);
-}
-
-for (let i = 0; i < countLength; i++) {
-  var random = Math.floor(Math.random() * 26);
-    console.log(upperLetters[random]);
-}
-
-for (let i = 0; i < countLength; i++) {
-  var random = Math.floor(Math.random() * 10);
-    console.log(numbers[random]);
-}
-
-for (let i = 0; i < countLength; i++) {
-  var random = Math.floor(Math.random() * 10);
-    console.log(specialCharacters[random]);
-}
 
 
 
