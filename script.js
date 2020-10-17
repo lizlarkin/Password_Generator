@@ -47,7 +47,6 @@ var countTrue = 0;
   }
  
 var countLength = Math.ceil(lengthUserInput / countTrue)
-console.log(countLength);
 
 // Push user requested characters to tempPass variable
 // If confirm is true, push characters from array at random 
@@ -77,18 +76,17 @@ var tempPass = []
       tempPass.push(specialCharacters[random]);
     }
   } 
-  
-    console.log(`Temp pass is ${tempPass}`);
-    console.log(`Temp password length is ${tempPass.length}`);
 
-// Edit tempPass length and remove tempPass commas
-finalPass = []
+// Edit tempPass length to match user's requested length
+tempPass2 = []
 
 for (let i = 0; i < lengthUserInput; i++) {
   let random = Math.floor(Math.random() * lengthUserInput);
-  finalPass.push(tempPass[random]);
+  tempPass2.push(tempPass[random]);
 }
 
+// Remove commas 
+finalPass = tempPass2.join('');
 console.log(`Final pass is ${finalPass}`);
 console.log(`Final password length is ${finalPass.length}`);
 
