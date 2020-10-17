@@ -1,31 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  // passwordText.value = password;
-  passwordText.textContent = tempPass;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
+function generatePassword() {
 // Collect User Preferences
 var userInput = parseInt(prompt("How long do you want the password between 8 and 128 characters?"))
     if (userInput >= 8 && userInput <= 128) {
       var lengthUserInput = userInput;  
-        console.log(lengthUserInput);
       var lowercaseUserInput = confirm("Do you want to include lowercase letters?")
-        console.log(lowercaseUserInput);
       var uppercaseUserInput = confirm("Do you want to include uppercase letters?")
-        console.log(uppercaseUserInput);
-        var numericUserInput = confirm("Do you want to include numbers?")
-        console.log(numericUserInput);     
-      var specialCharUserInput = confirm("Do you want to include special characters?")
-        console.log(specialCharUserInput);     
+      var numericUserInput = confirm("Do you want to include numbers?")
+      var specialCharUserInput = confirm("Do you want to include special characters?")   
     } else alert("Please input numbers between 8 and 128")
 
 // Define password character options
@@ -86,9 +70,28 @@ for (let i = 0; i < lengthUserInput; i++) {
 }
 
 // Remove commas 
-finalPass = tempPass2.join('');
-console.log(`Final pass is ${finalPass}`);
-console.log(`Final password length is ${finalPass.length}`);
+password = tempPass2.join('');
+console.log(`Final pass is ${password}`);
+console.log(`Final password length is ${password.length}`);
+return password;
+};
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+writePassword()
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
 
 
 
