@@ -14,4 +14,4 @@ I would like to revisit this and consolidate it when I get more familar with Jav
 there are significantly more concise ways of solving this challenge. 
 
 Screenshot: <img src="Password_Generator_Screenshot.png">
-Deployed Link: 
+Deployed Link: <a href="https://lizlarkin.github.io/Password_Generator/</a> 
