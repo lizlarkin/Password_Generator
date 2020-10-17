@@ -6,8 +6,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-
+  // passwordText.value = password;
+  passwordText.textContent = tempPass;
 }
 
 // Add event listener to generate button
@@ -29,7 +29,6 @@ var userInput = parseInt(prompt("How long do you want the password between 8 and
     } else alert("Please input numbers between 8 and 128")
 
 // Define password character options
-
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -51,9 +50,9 @@ var countLength = Math.ceil(lengthUserInput / countTrue)
 console.log(countLength);
 
 // Push user requested characters to tempPass variable
-// If confirm is true, push characters from array at random based on length
-
-var tempPass = [] 
+// If confirm is true, push characters from array at random 
+// Use countLength to ensure each character type is represented
+var tempPass = []
   if (lowercaseUserInput === true) {
     for (let i = 0; i < countLength; i++) {
       let random = Math.floor(Math.random() * 26);
@@ -79,17 +78,19 @@ var tempPass = []
     }
   } 
   
-    console.log(`Temp pass is ${tempPass}!`)
-// Edit tempPass variable to generate final password based on user requests
+    console.log(`Temp pass is ${tempPass}`);
+    console.log(`Temp password length is ${tempPass.length}`);
+
+// Edit tempPass length and remove tempPass commas
+finalPass = []
+
+for (let i = 0; i < lengthUserInput; i++) {
+  let random = Math.floor(Math.random() * lengthUserInput);
+  finalPass.push(tempPass[random]);
+}
+
+console.log(`Final pass is ${finalPass}`);
+console.log(`Final password length is ${finalPass.length}`);
 
 
-// Populate Password to replacement placeholder on page
-
-// passwordText.textContent = "test";
-
-// create random number to put into for loops
-
-
-
- 
 
