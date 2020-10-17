@@ -18,7 +18,9 @@ var upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
 
-// Calculate number of each requested parameter to append to password
+// Calculate number of each requested parameter to push to password
+// This block may not be necessary, but the intention is to increase the
+// probability that every character type requested by user is included
 var countTrue = 0;
     if (lowercaseUserInput === true) {
       countTrue++
@@ -71,8 +73,6 @@ for (let i = 0; i < lengthUserInput; i++) {
 
 // Remove commas 
 password = tempPass2.join('');
-console.log(`Final pass is ${password}`);
-console.log(`Final password length is ${password.length}`);
 return password;
 };
 
